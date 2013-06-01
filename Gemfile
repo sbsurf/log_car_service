@@ -43,3 +43,13 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem "rspec-rails"
+  gem "cucumber-rails", :require => false
+  #gem "webrat"
+  gem "database_cleaner"
+  #gem 'simplecov', :require => false
+  #gem 'selenium-webdriver'
+  gem 'launchy'
+end

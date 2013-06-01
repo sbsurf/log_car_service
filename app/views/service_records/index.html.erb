@@ -1,0 +1,33 @@
+<h1>Listing service_records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Service type</th>
+      <th>Mileage</th>
+      <th>Notes</th>
+      <th>Logged</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_records.each do |service_record| %>
+      <tr>
+        <td><%= service_record.service_type.name %></td>
+        <td><%= number_with_delimiter service_record.mileage %></td>
+        <td><%= service_record.notes %></td>
+        <td><%= l service_record.created_at, :format => :short %></td>
+        <td><%= link_to 'Show', service_record %></td>
+        <td><%= link_to 'Edit', edit_service_record_path(service_record) %></td>
+        <td><%= link_to 'Destroy', service_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service record', new_service_record_path %>
