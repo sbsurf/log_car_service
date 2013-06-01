@@ -2,7 +2,15 @@
 
 <p>
   <strong>Service type:</strong>
-  <%= @service_record.service_type %>
+  <%= @service_record.service_type.name %>
+</p>
+<p>
+  <strong>Mileage:</strong>
+  <%= number_with_delimiter @service_record.mileage %>
+</p>
+<p>
+  <strong>Notes:</strong>
+  <%= @service_record.notes %>
 </p>
 
 <%= link_to 'Edit', edit_service_record_path(@service_record) %> |

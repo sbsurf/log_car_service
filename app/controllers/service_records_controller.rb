@@ -69,6 +69,6 @@ class ServiceRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_record_params
-      params.require(:service_record).permit(:service_type)
+      params.require(:service_record).permit(:service_type_id, :mileage, :notes)
     end
 end
